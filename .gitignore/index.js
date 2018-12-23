@@ -1,10 +1,5 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
-const Google = require('./commands/google')
-const Play = require('./commands/play')
-const Prophecy = require('./commands/prophecy')
-const Dixit = require('./commands/dixit')
-const MINATION = require('./commands/mination')
 
 
 bot.on('ready', function() {
@@ -18,15 +13,20 @@ bot.on('guildMemberAdd', function (member) {
 })
 
 bot.on('message', function (message) {
-    let commandUsed =
-        Google.parse(message) ||
-        Ping.parse(message) ||
-        Rebel.parse(message) ||
-        Gouvernement.parse(message) ||
-        Play.parse(message) ||
-        Prophecy.parse(message) ||
-        Dixit.parse(message) ||
-        MINATION.parse(message)
+    if (message.content === 'di'){
+		let args = message.content.split('di')
+        args.shift()
+
+        message.reply(args.join(""))
+	}
+	if (message.startsWith === '!prophecy'){
+		        let vision = ['Omae Wa Mo Shin Deiru...', 'Deus EX Machina ', 'ZA WARUDO is your !', 'La Pouissance!!!',
+            'Demain, par un SuperSayan, sodomiser tu seras, mais une grande experience tu acquérera.',
+            'Non je ne vois rien......ta vie est sûrement trop Nulle.']
+        message.author.createDM().then(channel => {
+            channel.send(vision[Math.floor(Math.random() * vision.length)])
+        })
+	}
 
 })
 
