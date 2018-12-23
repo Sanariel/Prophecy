@@ -1,13 +1,9 @@
 const Discord = require('discord.js')
 const bot = new Discord.Client()
 const Google = require('./commands/google')
-const Gouvernement = require('./commands/gouvernement')
-const Rebel = require('./commands/rebel')
-const Ping = require('./commands/ping')
 const Play = require('./commands/play')
 const Prophecy = require('./commands/prophecy')
 const Dixit = require('./commands/dixit')
-const DixitV2 = require('./commands/dixitV2')
 const MINATION = require('./commands/mination')
 
 
