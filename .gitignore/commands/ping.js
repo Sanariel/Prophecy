@@ -1,4 +1,4 @@
-const Command = require('./command')
+const Command = require('./command.js')
 
 module.exports = class Ping extends Command {
 
